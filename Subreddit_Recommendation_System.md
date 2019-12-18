@@ -3,6 +3,8 @@
 <center><img src='https://github.com/jsiwu94/SVD_for_Subreddit_Recommendation/blob/master/redditbot_wordcloud.png'/></center>
 
 
+![bot](https://github.com/jsiwu94/SVD_for_Subreddit_Recommendation/blob/master/redditbot_wordcloud.pngstyle=centerme)
+
 ```python
 import numpy as np
 import pandas as pd
