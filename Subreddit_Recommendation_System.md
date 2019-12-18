@@ -317,64 +317,6 @@ for i in range(0,len(data)):
     pd_dict[item][users_index[user]] = value
 X = pd.DataFrame(pd_dict)
 X.index = users
-```
-
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:1: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      """Entry point for launching an IPython kernel.
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:2: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:3: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      This is separate from the ipykernel package so we can avoid doing imports until
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:4: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      after removing the cwd from sys.path.
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:5: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      """
-
-
-
-```python
-X[X.index == '-_-_-_-otalp-_-_-_-']['soccer']
-```
-
-
-
-
-    -_-_-_-otalp-_-_-_-    0.348932
-    Name: soccer, dtype: float64
-
-
-
-
 ```python
 def svd(train, k):
     utilMat = np.array(train)
