@@ -67,16 +67,7 @@ reddit_df.head()
 </table>
 </div>
 
-
-
-
-```python
-user = reddit_df.username.unique()
-subreddit = reddit_df.subreddit.unique()
-print('unique reddittor:',len(user)+1)
-print('unique subreddit:',len(subreddit)+1)
-print('total data entry:',reddit_df.shape)
-```
+# Checking for Unique Redditor and Subreddit
 
     unique reddittor: 15000
     unique subreddit: 29281
