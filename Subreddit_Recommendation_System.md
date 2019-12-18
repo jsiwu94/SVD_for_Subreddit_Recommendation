@@ -424,9 +424,6 @@ doc_df = reddit_df.groupby('username')['subreddit'].apply(lambda x: "%s" % ' '.j
 doc_df.head()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -488,10 +485,6 @@ document = doc_df.iloc[:, 1]
 document = document.apply(lambda row: tokenizer.tokenize(row))
 document.head()
 ```
-
-
-
-
     0    [Testosterone, Testosterone, Testosterone, Tes...
     1    [DestinyTheGame, DestinyTheGame, DestinyTheGam...
     2    [AceAttorney, AceAttorney, AceAttorney, AceAtt...
@@ -522,7 +515,6 @@ for r, d in enumerate(document):
 user_subreddit_matrix = csc_matrix((vals, (rows, cols)), dtype=np.float32)
 print((user_subreddit_matrix.shape))
 ```
-
     (14999, 29280)
 
 
