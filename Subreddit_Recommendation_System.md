@@ -513,27 +513,9 @@ def computeEstimatedRecommendation(U, S, Vt, uTest):
 
 
 ```python
-no_of_latent_factors = top_subreddit.subreddit[top_subreddit.cummulative_pct <= 65].count() #293
-no_of_recommendations_for_each_user = 5
 uTest = [np.where(user == 'CarnationsPls')[0][0]]
 U, S, Vt = computeSVD(user_subreddit_matrix, no_of_latent_factors)
 ```
-
-
-```python
-print("------------------------------------------------------------------------------------\n")
-print("Redditor: %s\n" % user[uTest[0]])
-print("------------------------------------------------------------------------------------\n")
-print("User Subreddit History - \n")
-
-##Getting users subs history where the vals in the matrix != 0
-previous_subredit_history = subreddit[np.where(user_subreddit_matrix[uTest[0],:].todense().T != 0)[0]]
-previous_subredit_history
-for previous_subredits in previous_subredit_history:
-     print(previous_subredits)
-print("\n------------------------------------------------------------------------------------\n")
-```
-
     ------------------------------------------------------------------------------------
     
     Redditor: CarnationsPls
@@ -554,29 +536,6 @@ print("\n-----------------------------------------------------------------------
     ------------------------------------------------------------------------------------
     
 
-
-
-```python
-#Get the top 5 subreddit recommendations for test user
-recommended_items = computeEstimatedRecommendation(U, S, Vt, uTest)
-final_recommendation = []
-for r in subreddit[recommended_items]:
-    ##Making sure the subreddits aren't from what they already viewed before (for Novelty)
-    if r not in previous_subredit_history:
-        final_recommendation.append(r)
-        if len(final_recommendation) == no_of_recommendations_for_each_user:
-            break
-
-print("------------------------------------------------------------------------------------\n")
-print("Recommendation for %s : \n" % user[uTest[0]])
-print("------------------------------------------------------------------------------------\n")
-
-for recommendation in final_recommendation:
-    print(recommendation)
-print("------------------------------------------------------------------------------------\n")
-
-```
-
     ------------------------------------------------------------------------------------
     
     Recommendation for CarnationsPls : 
@@ -594,27 +553,9 @@ print("-------------------------------------------------------------------------
 
 ## Recommendation Demo 2
 
-
 ```python
-no_of_latent_factors = top_subreddit.subreddit[top_subreddit.cummulative_pct <= 65].count() #293
-no_of_recommendations_for_each_user = 5
 uTest = [np.where(user == 'comicfan815')[0][0]]
 U, S, Vt = computeSVD(user_subreddit_matrix, no_of_latent_factors)
-```
-
-
-```python
-print("------------------------------------------------------------------------------------\n")
-print("Redditor: %s\n" % user[uTest[0]])
-print("------------------------------------------------------------------------------------\n")
-print("User Subreddit History - \n")
-
-##Getting users subs history where the vals in the matrix != 0
-previous_subredit_history = subreddit[np.where(user_subreddit_matrix[uTest[0],:].todense().T != 0)[0]]
-previous_subredit_history
-for previous_subredits in previous_subredit_history:
-     print(previous_subredits)
-print("\n------------------------------------------------------------------------------------\n")
 ```
 
     ------------------------------------------------------------------------------------
@@ -633,28 +574,6 @@ print("\n-----------------------------------------------------------------------
     
     ------------------------------------------------------------------------------------
     
-
-
-
-```python
-#Get the top 5 subreddit recommendations for test user
-recommended_items = computeEstimatedRecommendation(U, S, Vt, uTest)
-final_recommendation = []
-for r in subreddit[recommended_items]:
-    ##Making sure the subreddits aren't from what they already viewed before (for Novelty)
-    if r not in previous_subredit_history:
-        final_recommendation.append(r)
-        if len(final_recommendation) == no_of_recommendations_for_each_user:
-            break
-
-print("------------------------------------------------------------------------------------\n")
-print("Recommendation for %s : \n" % user[uTest[0]])
-print("------------------------------------------------------------------------------------\n")
-
-for recommendation in final_recommendation:
-    print(recommendation)
-print("------------------------------------------------------------------------------------\n")
-```
 
     ------------------------------------------------------------------------------------
     
