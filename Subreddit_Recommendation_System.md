@@ -67,17 +67,11 @@ reddit_df.head()
 </table>
 </div>
 
-# Checking for Unique Redditor and Subreddit
+# Checking the Data
 
     unique reddittor: 15000
     unique subreddit: 29281
     total data entry: (9391244, 3)
-
-
-
-```python
-print("Are there null values from our API dataset?  \n" + str(reddit_df.isnull().any()))
-```
 
     Are there null values from our API dataset?  
     username     False
