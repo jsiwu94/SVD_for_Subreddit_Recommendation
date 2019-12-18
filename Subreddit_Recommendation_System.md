@@ -301,22 +301,6 @@ print(test[test.username == '-_-_-_-otalp-_-_-_-'].iloc[:,:3])
 
 ### Transforming the Dataframe into Utility Matrix for SVD Computation Later
 
-
-```python
-userList = data.ix[:,0].tolist()
-itemList = data.ix[:,1].tolist()
-valueList = data.ix[:,2].tolist()
-users = list(set(data.ix[:,0]))
-items = list(set(data.ix[:,1]))
-users_index = {users[i]: i for i in range(len(users))}
-pd_dict = {item: [np.nan for i in range(len(users))] for item in items}
-for i in range(0,len(data)):
-    item = itemList[i]
-    user = userList[i]
-    value = valueList[i]
-    pd_dict[item][users_index[user]] = value
-X = pd.DataFrame(pd_dict)
-X.index = users
 ```python
 def svd(train, k):
     utilMat = np.array(train)
@@ -397,22 +381,6 @@ top_subreddit.head()
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
