@@ -345,28 +345,17 @@ def mae(true, pred):
 
 # to test the performance over a different number of features
 no_of_features = [134]
+svdout = svd(X, k=no_of_features)
+```
 
-svdout = svd(X, k=134)
-pred = [] #to store the predicted ratings
-    
-for _,row in test.iterrows():
-        user = row['username']
-        item = row['subreddit']
-        u_index = users_index[user]
-        if item in items_index:
-            i_index = items_index[item]
-            pred_rating = svdout[u_index, i_index]
-        else:
-            pred_rating = np.mean(svdout[u_index, :])
-        pred.append(pred_rating)
+```python
 print(mse(test['user_implicit_rating'], pred))
 print(mae(test['user_implicit_rating'], pred))
-
 ```
 
     svd done
-    0.0001907806366327251
-    0.005219784277697061
+    mse: 0.0001907806366327251
+    mae: 0.005219784277697061
 
 
 ## Preparing the dataset for our SVD Recommendation Demo
