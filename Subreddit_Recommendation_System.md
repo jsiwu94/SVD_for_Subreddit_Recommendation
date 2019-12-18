@@ -1,6 +1,6 @@
 # Subreddit Recommendation System using SVD
 
-<img src='https://assets.ifttt.com/images/channels/1352860597/icons/on_color_large.png'/>
+<img src='https://github.com/jsiwu94/SVD_for_Subreddit_Recommendation/blob/master/redditbot_wordcloud.png'/>
 
 
 ```python
