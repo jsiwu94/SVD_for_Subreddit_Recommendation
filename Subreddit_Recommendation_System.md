@@ -238,7 +238,7 @@ dummy_train = temp1.ix[: n-2-test_size]
     
 test = pd.concat([test, dummy_test])
 train = pd.concat([train, dummy_train])
-```python
+
 print("""Train Data for User "-_-_-_-otalp-_-_-_-"        :""")
 print(train[train.username == '-_-_-_-otalp-_-_-_-'].iloc[:,:3])
 print(" ")
