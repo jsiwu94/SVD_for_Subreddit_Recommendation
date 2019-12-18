@@ -18,32 +18,11 @@ from nltk.tokenize import TreebankWordTokenizer
 ```
 
 
-```python
-reddit_df = read_csv('/Users/jenniferwu/Documents/SVD_for_Subreddit_Recommendation/reddit_praw.csv')
-reddit_df.drop(columns=['Unnamed: 0'], inplace=True)
-```
-
 
 ```python
 reddit_df.head()
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
 </style>
 <table border="1" class="dataframe">
   <thead>
