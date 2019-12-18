@@ -238,27 +238,6 @@ dummy_train = temp1.ix[: n-2-test_size]
     
 test = pd.concat([test, dummy_test])
 train = pd.concat([train, dummy_train])
-```
-
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:15: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      from ipykernel import kernelapp as app
-    /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/ipykernel_launcher.py:16: FutureWarning: 
-    .ix is deprecated. Please use
-    .loc for label based indexing or
-    .iloc for positional indexing
-    
-    See the documentation here:
-    http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#ix-indexer-is-deprecated
-      app.launch_new_instance()
-
-
-
 ```python
 print("""Train Data for User "-_-_-_-otalp-_-_-_-"        :""")
 print(train[train.username == '-_-_-_-otalp-_-_-_-'].iloc[:,:3])
