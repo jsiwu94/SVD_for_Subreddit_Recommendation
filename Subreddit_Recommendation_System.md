@@ -506,15 +506,6 @@ def computeEstimatedRecommendation(U, S, Vt, uTest):
 ```
 
 
-```python
-n_latent_fact = top_subreddit.subreddit[top_subreddit.cummulative_pct <= 65].count()
-contribution_pct = round(top_subreddit.cummulative_pct[len(subreddit[top_subreddit.cummulative_pct <= 65])-1],1)
-
-print("Top", n_latent_fact ,"subreddits contribute a total of"
-      , contribution_pct,"%", "to the total subreddits in the dataset")
-
-```
-
     Top 293 subreddits contribute a total of 65.0 % to the total subreddits in the dataset
 
 
