@@ -358,64 +358,7 @@ print(mae(test['user_implicit_rating'], pred))
     mae: 0.005219784277697061
 
 
-## Preparing the dataset for our SVD Recommendation Demo
-
-
-```python
-top_subreddit = reddit_df.groupby(['subreddit']
-                                      , as_index=False).agg({'username': 'count'}).sort_values(by=['username']
-                                      , ascending=False).reset_index(drop=True).rename(columns={'username':'username_count'})
-top_subreddit['cummulative_pct'] = top_subreddit.username_count.cumsum()/top_subreddit.username_count.sum()*100
-top_subreddit.head()
-```
-
-
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>subreddit</th>
-      <th>username_count</th>
-      <th>cummulative_pct</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AskReddit</td>
-      <td>683932</td>
-      <td>7.282656</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>politics</td>
-      <td>260215</td>
-      <td>10.053482</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>The_Donald</td>
-      <td>146480</td>
-      <td>11.613232</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>nfl</td>
-      <td>122088</td>
-      <td>12.913252</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>worldnews</td>
-      <td>109187</td>
-      <td>14.075899</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
+## Creating The Recommendation System Using The Complete Dataset (15K Users)
 
 ```python
 user = reddit_df.username.unique()
@@ -424,20 +367,7 @@ doc_df = reddit_df.groupby('username')['subreddit'].apply(lambda x: "%s" % ' '.j
 doc_df.head()
 ```
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
