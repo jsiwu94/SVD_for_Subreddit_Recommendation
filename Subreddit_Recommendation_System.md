@@ -586,4 +586,4 @@ U, S, Vt = computeSVD(user_subreddit_matrix, no_of_latent_factors)
     
 
 
-## Thank you for reading! Please feel free to contact me directly for any comments, feedbacks, or suggestions. You can leave a comment below as well!
+#### Thank you for reading! Please feel free to contact me directly for any comments, feedbacks, or suggestions. You can leave a comment below as well!
