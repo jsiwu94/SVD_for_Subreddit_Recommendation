@@ -91,24 +91,7 @@ users = list(sample_df.username.unique())
 subreddits = list(sample_df.subreddit.unique())
 ```
 
-
-```python
-subs_freq = sample_df.groupby(['subreddit']
-                                      , as_index=False).agg({'username': 'count'}).sort_values(by=['username']
-                                      , ascending=False).reset_index(drop=True).rename(columns={'username':'username_count'})
-subs_freq['cummulative_pct'] = subs_freq.username_count.cumsum()/subs_freq.username_count.sum()*100
-
-latent_fac = subs_freq.subreddit[subs_freq.cummulative_pct <= 65].count()
-contribution_pcts = round(subs_freq.cummulative_pct[len(subs_freq.subreddit[subs_freq.cummulative_pct <= 65])-1],1)
-
-print("Top", latent_fac ,"subreddits contribute a total of"
-      , contribution_pcts,"%", "to the total subreddits in the dataset")
-
-
-```
-
     Top 134 subreddits contribute a total of 64.9 % to the total subreddits in the dataset
-
 
 
 ```python
@@ -118,23 +101,6 @@ data =sample_df.groupby(['username','subreddit']).agg({'subreddit':'count',
 data.head(10)
 ```
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
